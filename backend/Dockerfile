@@ -29,4 +29,6 @@ EXPOSE "4500"
 
 ADD ./app.py /code
 
+ENV GOOGLE_APPLICATION_CREDENTIALS="/code/cred.json"
+
 CMD ["python3.4", "app.py"]
