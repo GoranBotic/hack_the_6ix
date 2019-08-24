@@ -55,7 +55,7 @@ def analyze():
         
     sentiment = getSentiment(text)
 
-    resp = '{ "sentinment": { "polarity": %s, "subjectivity": %s , "noun_phrases": %s, "text": "%s" }, ' % (sentiment.sentiment.polarity, sentiment.sentiment.subjectivity, sentiment.noun_phrases, text)
+    resp = '{ "sentiment": { "polarity": %s, "subjectivity": %s , "text": "%s" }, ' % (sentiment.sentiment.polarity, sentiment.sentiment.subjectivity, text)
 
     
 
@@ -70,7 +70,7 @@ def analyze():
         resp += aggregate
 
     
-    jsonData = jsonify(resp)
+    jsonData = resp
 
     return jsonData, 200
         
