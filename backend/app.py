@@ -12,7 +12,9 @@ import sys
 
 from flask_cors import CORS
 
-from google.cloud import speech_v1 as speech
+
+from google.cloud import speech_v1p1beta1 as speech
+
 client = speech.SpeechClient()
 
 app = Flask(__name__)
@@ -22,20 +24,45 @@ CORS(app)
 #TODO: highlight keywords in transcript
 #return sentiment for the chunk as well as the overall analysis object 
 
-def getSpeakers(content):
-    audio = speech.types.RecognitionAudio(content=content)
+def getSpeakers(fl):
+    with sr.AudioFile(fl.stream) as content:
 
-    config = speech.types.RecognitionConfig(
-    encoding=speech.enums.RecognitionConfig.AudioEncoding.LINEAR16,
-    sample_rate_hertz=8000,
-    language_code='en-US',
-    enable_speaker_diarization=True,
-    diarization_speaker_count=2)
+        audio = speech.types.RecognitionAudio(content=content.stream.read())
 
-    print('Waiting for operation to complete...', file=sys.stderr)
-    response = client.recognize(config, audio)
+        config = speech.types.RecognitionConfig(
+        encoding=speech.enums.RecognitionConfig.AudioEncoding.LINEAR16,
+        sample_rate_hertz=44100,
+        language_code='en-US',
+        enable_speaker_diarization=True,
+        diarization_speaker_count=2)
 
-    print(result, file=sys.stderr)
+        #print('Waiting for operation to complete...', file=sys.stderr)
+        response = client.recognize(config, audio)
+
+        #print(response.results, file=sys.stderr)
+
+        text= response.results[-1].alternatives[0].transcript 
+        #print(text, file=sys.stderr)
+
+        newList = []
+        for word in response.results[-1].alternatives[0].words:
+            newList.append((word.end_time.nanos, word.speaker_tag, word.word)) 
+
+        newList.sort()
+
+        annotatedText = "@"+str(word.speaker_tag) + " " 
+        oldSpeaker = word.speaker_tag
+        for x in newList:
+            newSpeaker = x[1]
+            if oldSpeaker != newSpeaker:
+                oldSpeaker = newSpeaker
+                annotatedText += " @" + str(oldSpeaker)
+
+            annotatedText += str(x[2]) + " " 
+
+
+        #print(annotatedText, file=sys.stderr)
+        return text, annotatedText
 
 def getSentiment(text): 
     blob = TextBlob(str(unicodedata.normalize('NFKD', text).encode('ascii','ignore').lower()))
@@ -68,7 +95,7 @@ def STT(audio):
 def analyze():
     text = ""
     if 'audio' in request.files:
-        text = STT(request.files['audio'])
+        text,annotatedText = getSpeakers(request.files['audio'])
     elif 'text' in request.form:
         text = request.form['text']
     else:
@@ -76,7 +103,7 @@ def analyze():
         
     sentiment = getSentiment(text)
 
-    resp = '{ "sentinment": { "polarity": %s, "subjectivity": %s , "noun_phrases": %s, "text": "%s" }, ' % (sentiment.sentiment.polarity, sentiment.sentiment.subjectivity, sentiment.noun_phrases, text)
+    resp = '{ "sentinment": { "polarity": %s, "subjectivity": %s , "noun_phrases": %s, "text": "%s" }, ' % (sentiment.sentiment.polarity, sentiment.sentiment.subjectivity, sentiment.noun_phrases, annotatedText)
 
     
 

@@ -4,4 +4,4 @@ flask-cors
 textblob
 pocketsphinx 
 SpeechRecognition
-google-cloud-language
+google-cloud-speech
