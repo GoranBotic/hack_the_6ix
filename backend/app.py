@@ -21,9 +21,7 @@ CORS(app)
 
 def getSentiment(text): 
     blob = TextBlob(str(unicodedata.normalize('NFKD', text).encode('ascii','ignore').lower()))
-    noun_phrases = blob.noun_phrases
-    status = '{ "sentinment": { "polarity": %s, "subjectivity": %s , "noun_phrases": %s, "text": "%s" } }' % (blob.sentiment.polarity, blob.sentiment.subjectivity, noun_phrases, text)
-    return status
+    return blob
 
 r = sr.Recognizer()
 def STT(audio):
@@ -50,13 +48,32 @@ def analyze():
     text = ""
     if 'audio' in request.files:
         text = STT(request.files['audio'])
-    else:
+    elif 'text' in request.form:
         text = request.form['text']
+    else:
+        return "Invalid Request", 400
         
     sentiment = getSentiment(text)
 
-    return jsonify(sentiment), 200
+    resp = '{ "sentinment": { "polarity": %s, "subjectivity": %s , "noun_phrases": %s, "text": "%s" }, ' % (sentiment.sentiment.polarity, sentiment.sentiment.subjectivity, sentiment.noun_phrases, text)
+
+    
+
+    if 'aggregate' in request.form:
+        
+        polarity = str(((23.0/24.0)*float(request.form["aggregate"]["polarity"])) + ((1.0/24.0)*float(sentiment.sentiment.polarity)))
+        subjectivity = str(((23.0/24.0)*float(request.form["aggregate"]["subjectivity"])) + ((1.0/24.0)*float(sentiment.sentiment.subjectivity)))
+        aggregate = ' "aggregate": {"polarity": %s, "subjectivity": %s} }' % (polarity, subjectivity)
+        resp += aggregate
+    else:
+        aggregate = ' "aggregate": {"polarity": %s, "subjectivity": %s} }' % (sentiment.sentiment.polarity, sentiment.sentiment.subjectivity)
+        resp += aggregate
+
+    
+    jsonData = jsonify(resp)
+
+    return jsonData, 200
         
     
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=4500, debug=True)
+    app.run(host='0.0.0.0', port=4500, debug=False)
