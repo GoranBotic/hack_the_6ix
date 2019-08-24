@@ -1,0 +1,1 @@
+sudo docker run --rm -p 4500:4500 backend
