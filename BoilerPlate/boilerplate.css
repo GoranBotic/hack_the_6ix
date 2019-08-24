@@ -1,0 +1,1196 @@
+/*                          HOME                                           */
+
+/* Home */
+
+position: relative;
+width: 1440px;
+height: 1024px;
+
+background: #FFFFFF;
+transform: matrix(1, 0, 0, -1, 0, 0);
+
+
+/* Desktop */
+
+position: absolute;
+width: 1440px;
+height: 1024px;
+left: 0px;
+top: 1024px;
+
+background: linear-gradient(90.15deg, #EDE574 0.09%, #E4F1B0 51.56%, #E1F5C4 76.51%);
+transform: matrix(1, 0, 0, -1, 0, 0);
+
+
+/* Header */
+
+position: absolute;
+width: 1440px;
+height: 1024px;
+left: 0px;
+top: 0px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 0.1%;
+right: 28.98%;
+top: 0.27%;
+bottom: -40.75%;
+
+background: linear-gradient(90deg, #EDE574 0%, #E1F5C4 100%);
+border: 2px solid #DDDDDD;
+transform: matrix(0, 1, 1, 0, 0, 0);
+
+
+/* Vector */
+
+position: absolute;
+left: 29.75%;
+right: 29.85%;
+top: 47.67%;
+bottom: 50.52%;
+
+background: #D8D8D8;
+
+
+/* Vector */
+
+position: absolute;
+left: 29.75%;
+right: 29.85%;
+top: 44.03%;
+bottom: 54.15%;
+
+background: #D8D8D8;
+
+
+/* Vector */
+
+position: absolute;
+left: 26.44%;
+right: 26.18%;
+top: 37.48%;
+bottom: 59.61%;
+
+background: #868686;
+
+
+/* Vector */
+
+position: absolute;
+left: 0%;
+right: 0.1%;
+top: 10.92%;
+bottom: 88.36%;
+
+background: #DDDDDD;
+
+
+/* Vector */
+
+position: absolute;
+left: 3.69%;
+right: 88.62%;
+top: 3.27%;
+bottom: 90.93%;
+
+border: 1px solid #3EC6FF;
+
+
+/* Vector */
+
+position: absolute;
+left: 4.99%;
+right: 93.61%;
+top: 4.62%;
+bottom: 93.96%;
+
+border: 1px solid #3EC6FF;
+
+
+/* Vector */
+
+position: absolute;
+left: 5.36%;
+right: 88.62%;
+top: 5.1%;
+bottom: 90.93%;
+
+border: 1px solid #3EC6FF;
+
+
+/* Vector */
+
+position: absolute;
+left: 0%;
+right: 0.1%;
+top: 0%;
+bottom: 99.27%;
+
+background: #DDDDDD;
+
+
+/* BS */
+
+position: absolute;
+width: 588px;
+height: 55px;
+left: 428px;
+top: 275px;
+
+font-family: Arial;
+font-size: 48px;
+line-height: 55px;
+
+color: #000000;
+
+border: 0.914773px solid #000000;
+
+
+/* Settings */
+
+position: absolute;
+width: 50px;
+height: 50px;
+left: 1281px;
+top: 38px;
+
+background: url(145-1454310_cog-font-awesome-cog-icon-transparent-background-hd.jpg);
+background-blend-mode: soft-light;
+
+
+/* Rectangle */
+
+position: absolute;
+width: 50px;
+height: 50px;
+left: 1367px;
+top: 38px;
+
+background: url(kisspng-dots-computer-icons-encapsulated-postscript-dots-5abb909aa953f3.3265264615222416906936.jpg);
+background-blend-mode: soft-light;
+
+
+/* Rectangle 2 */
+
+position: absolute;
+width: 404px;
+height: 102px;
+left: 203px;
+top: 747px;
+
+background: rgba(61, 115, 36, 0.26);
+border-radius: 25px;
+
+
+/* Current Call */
+
+position: absolute;
+width: 299px;
+height: 69px;
+left: 239px;
+top: 768px;
+
+/* TestStyle */
+font-family: Arial;
+font-size: 48px;
+line-height: 55px;
+
+color: #000000;
+
+
+
+/* Rectangle 3 */
+
+position: absolute;
+width: 401px;
+height: 101px;
+left: 903px;
+top: 742px;
+
+background: rgba(92, 165, 99, 0.6);
+background-blend-mode: luminosity;
+border-radius: 25px;
+
+
+/* Call History */
+
+position: absolute;
+width: 272px;
+height: 78px;
+left: 956px;
+top: 747px;
+
+/* TestStyle */
+font-family: Arial;
+font-size: 48px;
+line-height: 55px;
+
+color: #000000;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*                          HISTORY                                           */
+
+/* History */
+
+position: relative;
+width: 1440px;
+height: 1024px;
+
+background: #FFFFFF;
+transform: matrix(1, 0, 0, -1, 0, 0);
+
+
+/* Desktop */
+
+position: absolute;
+width: 1440px;
+height: 1024px;
+left: 0px;
+top: 0px;
+
+background: linear-gradient(90deg, #EDE574 0%, #E1F5C4 100%);
+
+
+/* BS */
+
+position: absolute;
+width: 692px;
+height: 137px;
+left: 374px;
+top: 21px;
+
+font-family: Arial;
+font-size: 48px;
+line-height: 55px;
+
+color: #000000;
+
+border: 0.914773px solid #000000;
+
+
+/* Settings Cog */
+
+position: absolute;
+width: 50px;
+height: 50px;
+left: 1268px;
+top: 65px;
+
+background: url(145-1454310_cog-font-awesome-cog-icon-transparent-background-hd.jpg);
+background-blend-mode: soft-light;
+transform: matrix(1, 0, 0, -1, 0, 0);
+
+
+/* Rectangle */
+
+position: absolute;
+width: 50px;
+height: 50px;
+left: 1350px;
+top: 65px;
+
+background: url(kisspng-dots-computer-icons-encapsulated-postscript-dots-5abb909aa953f3.3265264615222416906936.jpg);
+background-blend-mode: soft-light;
+transform: matrix(1, 0, 0, -1, 0, 0);
+
+
+/* Return */
+
+position: absolute;
+width: 50px;
+height: 50px;
+left: 27px;
+top: 15px;
+
+background: url(png_go-back-arrow-illustration.jpg);
+background-blend-mode: soft-light;
+
+
+/* Colorfull Extra web 15 */
+
+position: absolute;
+width: 1365.68px;
+height: 833.64px;
+left: 37.51px;
+top: 98.83px;
+
+
+
+/* Layer 44 */
+
+position: absolute;
+left: 2.6%;
+right: 2.56%;
+top: 9.65%;
+bottom: 8.94%;
+
+
+
+/* Group */
+
+position: absolute;
+left: 2.6%;
+right: 2.56%;
+top: 9.65%;
+bottom: 8.94%;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 2.6%;
+right: 2.56%;
+top: 9.65%;
+bottom: 8.94%;
+
+background: #CAD1D8;
+
+
+/* Vector */
+
+position: absolute;
+left: 5.57%;
+right: 91.47%;
+top: 13.72%;
+bottom: 83.56%;
+
+background: #9BA7AF;
+
+
+/* Vector */
+
+position: absolute;
+left: 11.5%;
+right: 85.54%;
+top: 13.72%;
+bottom: 83.56%;
+
+background: #9BA7AF;
+
+
+/* Vector */
+
+position: absolute;
+left: 17.42%;
+right: 79.61%;
+top: 13.72%;
+bottom: 83.56%;
+
+background: #9BA7AF;
+
+
+/* Vector */
+
+position: absolute;
+left: 5.57%;
+right: 5.52%;
+top: 20.51%;
+bottom: 11.65%;
+
+background: #FFFFFF;
+
+
+/* Vector */
+
+position: absolute;
+left: 23.35%;
+right: 5.52%;
+top: 13.72%;
+bottom: 83.56%;
+
+background: #E2E5E7;
+
+
+/* Vector */
+
+position: absolute;
+left: 5.57%;
+right: 64.79%;
+top: 20.51%;
+bottom: 11.65%;
+
+background: #35363E;
+
+
+/* Vector */
+
+position: absolute;
+left: 10.01%;
+right: 78.13%;
+top: 27.29%;
+bottom: 70%;
+
+background: #9BA7AF;
+
+
+/* Vector */
+
+position: absolute;
+left: 27.8%;
+right: 69.24%;
+top: 27.29%;
+bottom: 70%;
+
+background: #3689C9;
+
+
+/* Vector */
+
+position: absolute;
+left: 10.01%;
+right: 79.61%;
+top: 43.57%;
+bottom: 53.71%;
+
+background: #9BA7AF;
+
+
+/* Vector */
+
+position: absolute;
+left: 27.8%;
+right: 69.24%;
+top: 43.57%;
+bottom: 53.71%;
+
+background: #FDBA4D;
+
+
+/* Vector */
+
+position: absolute;
+left: 10.01%;
+right: 76.65%;
+top: 76.14%;
+bottom: 21.15%;
+
+background: #9BA7AF;
+
+
+/* Vector */
+
+position: absolute;
+left: 27.8%;
+right: 69.24%;
+top: 76.14%;
+bottom: 21.15%;
+
+background: #CC202C;
+
+
+/* Vector */
+
+position: absolute;
+left: 10.01%;
+right: 76.65%;
+top: 35.43%;
+bottom: 61.85%;
+
+background: #9BA7AF;
+
+
+/* Vector */
+
+position: absolute;
+left: 27.8%;
+right: 69.24%;
+top: 35.43%;
+bottom: 61.85%;
+
+background: #EE2C39;
+
+
+/* Vector */
+
+position: absolute;
+left: 10.01%;
+right: 76.65%;
+top: 51.71%;
+bottom: 45.57%;
+
+background: #9BA7AF;
+
+
+/* Vector */
+
+position: absolute;
+left: 27.8%;
+right: 69.24%;
+top: 51.71%;
+bottom: 45.57%;
+
+background: #3BB54A;
+
+
+/* Vector */
+
+position: absolute;
+left: 10.01%;
+right: 81.09%;
+top: 68%;
+bottom: 29.29%;
+
+background: #9BA7AF;
+
+
+/* Vector */
+
+position: absolute;
+left: 27.8%;
+right: 69.24%;
+top: 68%;
+bottom: 29.29%;
+
+background: #F19F35;
+
+
+/* Vector */
+
+position: absolute;
+left: 10.01%;
+right: 75.17%;
+top: 59.85%;
+bottom: 37.43%;
+
+background: #9BA7AF;
+
+
+/* Vector */
+
+position: absolute;
+left: 27.8%;
+right: 69.24%;
+top: 59.85%;
+bottom: 37.43%;
+
+background: #ABE1FA;
+
+
+/* Vector */
+
+position: absolute;
+left: 41.13%;
+right: 11.45%;
+top: 25.93%;
+bottom: 65.93%;
+
+background: #E2E5E7;
+
+
+/* Vector */
+
+position: absolute;
+left: 41.13%;
+right: 38.12%;
+top: 38.15%;
+bottom: 48.29%;
+
+background: #E2E5E7;
+
+
+/* Vector */
+
+position: absolute;
+left: 41.13%;
+right: 45.53%;
+top: 73.42%;
+bottom: 18.44%;
+
+background: #E2E5E7;
+
+
+/* Vector */
+
+position: absolute;
+left: 75.22%;
+right: 11.45%;
+top: 73.42%;
+bottom: 18.44%;
+
+background: #E2E5E7;
+
+
+/* Vector */
+
+position: absolute;
+left: 58.92%;
+right: 29.23%;
+top: 73.42%;
+bottom: 18.44%;
+
+background: #E2E5E7;
+
+
+/* Vector */
+
+position: absolute;
+left: 41.13%;
+right: 23.3%;
+top: 55.78%;
+bottom: 30.65%;
+
+background: #E2E5E7;
+
+
+/* Vector */
+
+position: absolute;
+left: 67.81%;
+right: 11.45%;
+top: 38.15%;
+bottom: 48.29%;
+
+background: #E2E5E7;
+
+
+/* Vector */
+
+position: absolute;
+left: 81.14%;
+right: 11.45%;
+top: 55.78%;
+bottom: 30.65%;
+
+background: #E2E5E7;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*                          LOADING                                           */
+
+/* Load Screen */
+
+position: relative;
+width: 1440px;
+height: 1024px;
+
+background: linear-gradient(180deg, #EDE574 0%, #E1F5C4 100%);
+
+
+/* Settings */
+
+position: absolute;
+width: 50px;
+height: 50px;
+left: 1222px;
+top: 35px;
+
+background: url(145-1454310_cog-font-awesome-cog-icon-transparent-background-hd.jpg);
+background-blend-mode: soft-light;
+
+
+/* Help */
+
+position: absolute;
+width: 50px;
+height: 50px;
+left: 1332px;
+top: 35px;
+
+background: url(kisspng-dots-computer-icons-encapsulated-postscript-dots-5abb909aa953f3.3265264615222416906936.jpg);
+background-blend-mode: soft-light;
+
+
+/* Return */
+
+position: absolute;
+width: 50px;
+height: 50px;
+left: 28px;
+top: 35px;
+
+background: url(png_go-back-arrow-illustration.jpg);
+background-blend-mode: soft-light;
+
+
+/* AnimFrame */
+
+position: absolute;
+width: 300px;
+height: 300px;
+left: 282px;
+top: 198px;
+
+
+
+/* LoadAnim */
+
+position: absolute;
+width: 300px;
+height: 300px;
+left: 0px;
+top: 300px;
+
+background: #C4C4C4;
+mix-blend-mode: hard-light;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+transform: rotate(-90deg);
+
+
+/* Loading... */
+
+position: absolute;
+width: 108px;
+height: 22px;
+left: 378px;
+top: 144px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+line-height: 28px;
+
+color: #000000;
+
+
+
+/* Suggestions During Call: */
+
+position: absolute;
+width: 267px;
+height: 28px;
+left: 927px;
+top: 138px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+line-height: 28px;
+
+color: #000000;
+
+
+
+/* Live Transcript: */
+
+position: absolute;
+width: 167px;
+height: 28px;
+left: 636px;
+top: 532px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+line-height: 28px;
+
+color: #000000;
+
+
+
+/* SuggestionFrame */
+
+position: absolute;
+width: 479px;
+height: 300px;
+left: 821px;
+top: 200px;
+
+background: #E7ED9B;
+
+
+/* - *Suggestions in call listed in box here* */
+
+position: absolute;
+width: 421px;
+height: 28px;
+left: 21px;
+top: 21px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 28px;
+
+color: #000000;
+
+
+
+/* sRect */
+
+position: absolute;
+width: 479px;
+height: 300px;
+left: 0px;
+top: 0px;
+
+background: #EAE989;
+mix-blend-mode: overlay;
+
+
+/* Transcript */
+
+position: absolute;
+width: 1200px;
+height: 400px;
+left: 100px;
+top: 586px;
+
+background: #FBFCA2;
+
+
+/* Rectangle */
+
+position: absolute;
+width: 1200px;
+height: 400px;
+left: 0px;
+top: 0px;
+
+background: #FBFCA2;
+
+
+/* - *Live Transcript here* */
+
+position: absolute;
+width: 252px;
+height: 28px;
+left: 28px;
+top: 40px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+line-height: 28px;
+
+color: #000000;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*                          RESULTS                                           */
+
+/* Overall */
+
+position: relative;
+width: 1440px;
+height: 1024px;
+
+background: linear-gradient(360deg, #EDE574 0%, #E1F5C4 100%);
+
+
+/* Settings */
+
+position: absolute;
+width: 50px;
+height: 50px;
+left: 1269px;
+top: 19px;
+
+background: url(145-1454310_cog-font-awesome-cog-icon-transparent-background-hd.jpg);
+background-blend-mode: soft-light;
+
+
+/* Return */
+
+position: absolute;
+width: 50px;
+height: 50px;
+left: 35px;
+top: 19px;
+
+background: url(png_go-back-arrow-illustration.jpg);
+background-blend-mode: soft-light;
+
+
+/* Suggestions During Call: */
+
+position: absolute;
+width: 267px;
+height: 28px;
+left: 238px;
+top: 100px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+line-height: 28px;
+
+color: #000000;
+
+
+
+/* Live Transcript: */
+
+position: absolute;
+width: 167px;
+height: 28px;
+left: 979px;
+top: 100px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+line-height: 28px;
+
+color: #000000;
+
+
+
+/* SuggestionFrame */
+
+position: absolute;
+width: 574px;
+height: 800px;
+left: 85px;
+top: 169px;
+
+background: #FEFEA9;
+
+
+/* sRect */
+
+position: absolute;
+width: 574px;
+height: 800px;
+left: 0px;
+top: 0px;
+
+background: #EAE989;
+mix-blend-mode: overlay;
+
+
+/* - *Suggestions in call listed in box here* */
+
+position: absolute;
+width: 421px;
+height: 28px;
+left: 0px;
+top: 0px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 28px;
+
+color: #000000;
+
+
+
+/* Transcript */
+
+position: absolute;
+width: 574px;
+height: 800px;
+left: 776px;
+top: 169px;
+
+background: #FFFFAF;
+
+
+/* Rectangle */
+
+position: absolute;
+width: 574px;
+height: 800px;
+left: 0px;
+top: 0px;
+
+background: #FBFCA2;
+
+
+/* - *Live Transcript here* */
+
+position: absolute;
+width: 252px;
+height: 28px;
+left: 0px;
+top: 0px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+line-height: 28px;
+
+color: #000000;
+
+
+
+/* Help */
+
+position: absolute;
+width: 50px;
+height: 50px;
+left: 1350px;
+top: 19px;
+
+background: url(kisspng-dots-computer-icons-encapsulated-postscript-dots-5abb909aa953f3.3265264615222416906936.jpg);
+background-blend-mode: soft-light;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*                          HELP                                           */
+
+/* Help */
+
+position: relative;
+width: 1440px;
+height: 1024px;
+
+background: linear-gradient(90deg, #EDE574 0%, #E1F5C4 100%);
+
+
+/* Settings */
+
+position: absolute;
+width: 50px;
+height: 50px;
+left: 1270px;
+top: 50px;
+
+background: url(145-1454310_cog-font-awesome-cog-icon-transparent-background-hd.jpg);
+background-blend-mode: soft-light;
+
+
+/* Return */
+
+position: absolute;
+width: 50px;
+height: 50px;
+left: 50px;
+top: 50px;
+
+background: url(png_go-back-arrow-illustration.jpg);
+background-blend-mode: soft-light;
+
+
+/* Help Page Here.... */
+
+position: absolute;
+width: 197px;
+height: 28px;
+left: 621px;
+top: 490px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+line-height: 28px;
+
+color: #000000;
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*                          SETTINGS                                           */
+
+/* Settings */
+
+position: relative;
+width: 1440px;
+height: 1024px;
+
+background: linear-gradient(90deg, #EDE574 0%, #E1F5C4 100%);
+
+
+/* Return */
+
+position: absolute;
+width: 50px;
+height: 50px;
+left: 38px;
+top: 27px;
+
+background: url(png_go-back-arrow-illustration.jpg);
+background-blend-mode: soft-light;
+
+
+/* Help */
+
+position: absolute;
+width: 50px;
+height: 50px;
+left: 1355px;
+top: 27px;
+
+background: url(kisspng-dots-computer-icons-encapsulated-postscript-dots-5abb909aa953f3.3265264615222416906936.jpg);
+background-blend-mode: soft-light;
+
+
+/* Settings Page Here.... */
+
+position: absolute;
+width: 237px;
+height: 28px;
+left: 602px;
+top: 498px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+line-height: 28px;
+
+color: #000000;
+
