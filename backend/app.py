@@ -10,8 +10,10 @@ import speech_recognition as sr
 
 import sys
 
+from flask_cors import CORS
+
 app = Flask(__name__)
-#api = Api(app)
+CORS(app)
 
 #TODO: transcript 
 #TODO: highlight keywords in transcript
@@ -20,7 +22,7 @@ app = Flask(__name__)
 def getSentiment(text): 
     blob = TextBlob(str(unicodedata.normalize('NFKD', text).encode('ascii','ignore').lower()))
     noun_phrases = blob.noun_phrases
-    status = '{ "sentinment": { "polarity": %s, "subjectivity": %s , "noun_phrases": %s, "text": %s } }' % (blob.sentiment.polarity, blob.sentiment.subjectivity, noun_phrases, text)
+    status = '{ "sentinment": { "polarity": %s, "subjectivity": %s , "noun_phrases": %s, "text": "%s" } }' % (blob.sentiment.polarity, blob.sentiment.subjectivity, noun_phrases, text)
     return status
 
 r = sr.Recognizer()
@@ -53,7 +55,7 @@ def analyze():
         
     sentiment = getSentiment(text)
 
-    return sentiment, 200
+    return jsonify(sentiment), 200
         
     
 if __name__ == '__main__':
