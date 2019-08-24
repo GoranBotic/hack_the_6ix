@@ -90,10 +90,7 @@ def analyze():
         aggregate = ' "aggregate": {"polarity": %s, "subjectivity": %s} }' % (sentiment.sentiment.polarity, sentiment.sentiment.subjectivity)
         resp += aggregate
 
-    
-    jsonData = jsonify(resp)
-
-    return jsonData, 200
+    return resp, 200
         
     
 if __name__ == '__main__':
