@@ -17,7 +17,6 @@ RUN easy_install-3.4 pip
 RUN \
 pip3 install --upgrade pip
 
-
 RUN pip3 install -r requirements.txt
 
 RUN python3.4 -m textblob.download_corpora
