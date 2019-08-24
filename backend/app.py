@@ -15,66 +15,78 @@ from flask_cors import CORS
 
 from google.cloud import speech_v1p1beta1 as speech
 
+import hashlib
+
+import time
+
+from copy import deepcopy
+
 client = speech.SpeechClient()
 
 app = Flask(__name__)
 CORS(app)
 
-#TODO: transcript 
-#TODO: highlight keywords in transcript
-#return sentiment for the chunk as well as the overall analysis object 
+
+activeIDs = dict() 
+#(audio, annotatedText, time)
 
 def getSpeakers(fl):
-    with sr.AudioFile(fl.stream) as content:
+    content = fl
 
-        audio = speech.types.RecognitionAudio(content=content.stream.read())
+    audio = speech.types.RecognitionAudio(content=content.stream.read())
 
-        config = speech.types.RecognitionConfig(
-        encoding=speech.enums.RecognitionConfig.AudioEncoding.LINEAR16,
-        sample_rate_hertz=44100,
-        language_code='en-US',
-        enable_speaker_diarization=True,
-        diarization_speaker_count=2)
+    config = speech.types.RecognitionConfig(
+    encoding=speech.enums.RecognitionConfig.AudioEncoding.LINEAR16,
+    sample_rate_hertz=44100,
+    language_code='en-US',
+    enable_speaker_diarization=True,
+    diarization_speaker_count=2)
 
-        #print('Waiting for operation to complete...', file=sys.stderr)
-        response = client.recognize(config, audio)
+    #print('Waiting for operation to complete...', file=sys.stderr)
+    response = client.recognize(config, audio)
 
-        #print(response.results, file=sys.stderr)
+    print(response, file=sys.stderr)
 
-        text= response.results[-1].alternatives[0].transcript 
-        #print(text, file=sys.stderr)
+    #print(response.results, file=sys.stderr)
 
-        newList = []
-        for word in response.results[-1].alternatives[0].words:
-            newList.append((word.end_time.nanos, word.speaker_tag, word.word)) 
+    text= response.results[-1].alternatives[0].transcript 
+    #print(text, file=sys.stderr)
 
-        newList.sort()
+    newList = []
+    for word in response.results[-1].alternatives[0].words:
+        newList.append(((float(word.end_time.nanos)/1000000000.0) + word.end_time.seconds, word.speaker_tag, word.word)) 
 
-        annotatedText = "@"+str(word.speaker_tag) + " " 
-        oldSpeaker = word.speaker_tag
-        for x in newList:
-            newSpeaker = x[1]
-            if oldSpeaker != newSpeaker:
-                oldSpeaker = newSpeaker
-                annotatedText += " @" + str(oldSpeaker)
+    newList.sort()
 
-            annotatedText += str(x[2]) + " " 
+    annotatedText = "@"+str(word.speaker_tag) + " " 
+    oldSpeaker = word.speaker_tag
+    numSpeakers = 0
+    for x in newList:
+        if int(x[1]) > numSpeakers:
+            numSpeakers = int(x[1])
+        newSpeaker = x[1]
+        if oldSpeaker != newSpeaker:
+            oldSpeaker = newSpeaker
+            twoSpeakers=True
+            annotatedText += " @" + str(oldSpeaker)
+
+        annotatedText += str(x[2]) + " " 
 
 
-        #print(annotatedText, file=sys.stderr)
-        return text, annotatedText
+    #print(annotatedText, file=sys.stderr)
+    return text, annotatedText, numSpeakers
 
+#local sentiment analysis
 def getSentiment(text): 
     blob = TextBlob(str(unicodedata.normalize('NFKD', text).encode('ascii','ignore').lower()))
     return blob
 
+#local speech to text 
 r = sr.Recognizer()
 def STT(audio):
     
     text = ""
     with sr.AudioFile(audio.stream) as fl:
-
-        getSpeakers(fl) 
 
         aud = r.record(fl)
 
@@ -90,20 +102,57 @@ def STT(audio):
     
     return ""
 
-#class Analyze(Resource):
+#The main function
 @app.route("/api/v1/analyze", methods=['POST','PUT'])
 def analyze():
+
+    ID = None 
+    if "identifier" in request.form:
+        ID = str(request.form["identifier"]) 
+
+    print(ID, file=sys.stderr)
+             
     text = ""
     if 'audio' in request.files:
-        text,annotatedText = getSpeakers(request.files['audio'])
+        if ID != None and ID in activeIDs and activeIDs[ID][0] != None:
+            with sr.AudioFile(request.files['audio'].stream) as fl1:
+                with sr.AudioFile(activeIDs[ID][0]) as fl2:
+                    fullFl = fl1 + fl2
+                    text,annotatedText,numSpeakers = getSpeakers(fullFl)
+
+                    lst1 = annotatedText.split(" ") 
+                    lst2 = activeIDs[ID][1]
+                    for x in lst2:
+                        del lst1[0] 
+
+                    annotatedText = ""
+                    for x in lst2:
+                        annotatedText += x + " "
+        elif ID == None or ID not in activeIDs:
+            with sr.AudioFile(request.files['audio'].stream) as fl1:
+                text,annotatedText,numSpeakers = getSpeakers(fl1)
+                strThing = text + str(time.time())
+                ID = str(hashlib.md5(strThing.encode('utf-8')).hexdigest())
+                activeIDs[ID] = (None, None, None) 
+                if numSpeakers > 0:
+                    activeIDs[ID] = (request.files['audio'].stream, annotatedText, time.time())
+
+        else:
+            with sr.AudioFile(request.files['audio'].stream) as fl1:
+                text,annotatedText,numSpeakers = getSpeakers(fl1)
+                if numSpeakers > 0:
+                    activeIDs[ID] = (request.files['audio'].stream, annotatedText, time.time())
+    
     elif 'text' in request.form:
         text = request.form['text']
     else:
         return "Invalid Request", 400
+
+    
         
     sentiment = getSentiment(text)
 
-    resp = '{ "sentinment": { "polarity": %s, "subjectivity": %s , "noun_phrases": %s, "text": "%s" }, ' % (sentiment.sentiment.polarity, sentiment.sentiment.subjectivity, sentiment.noun_phrases, annotatedText)
+    resp = '{ "sentiment": { "polarity": %s, "subjectivity": %s , "noun_phrases": %s, "text": "%s" }, ' % (sentiment.sentiment.polarity, sentiment.sentiment.subjectivity, sentiment.noun_phrases, annotatedText)
 
     
 
@@ -114,9 +163,10 @@ def analyze():
         aggregate = ' "aggregate": {"polarity": %s, "subjectivity": %s} }' % (polarity, subjectivity)
         resp += aggregate
     else:
-        aggregate = ' "aggregate": {"polarity": %s, "subjectivity": %s} }' % (sentiment.sentiment.polarity, sentiment.sentiment.subjectivity)
+        aggregate = ' "aggregate": {"polarity": %s, "subjectivity": %s}, ' % (sentiment.sentiment.polarity, sentiment.sentiment.subjectivity)
         resp += aggregate
-
+         
+    resp += '"identifier": ' + str(ID) + "}"
     return resp, 200
         
     

@@ -1,0 +1,1472 @@
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on http://0.0.0.0:4500/ (Press CTRL+C to quit)
+None
+results {
+  alternatives {
+    transcript: "Bruno\'s Granger did you know the rule"
+    confidence: 0.80339414
+    words {
+      start_time {
+        nanos: 300000000
+      }
+      end_time {
+        seconds: 1
+      }
+      word: "Bruno\'s"
+    }
+    words {
+      start_time {
+        seconds: 1
+      }
+      end_time {
+        seconds: 1
+        nanos: 400000000
+      }
+      word: "Granger"
+    }
+    words {
+      start_time {
+        seconds: 1
+        nanos: 400000000
+      }
+      end_time {
+        seconds: 14
+        nanos: 300000000
+      }
+      word: "did"
+    }
+    words {
+      start_time {
+        seconds: 14
+        nanos: 300000000
+      }
+      end_time {
+        seconds: 14
+        nanos: 600000000
+      }
+      word: "you"
+    }
+    words {
+      start_time {
+        seconds: 14
+        nanos: 600000000
+      }
+      end_time {
+        seconds: 14
+        nanos: 800000000
+      }
+      word: "know"
+    }
+    words {
+      start_time {
+        seconds: 14
+        nanos: 800000000
+      }
+      end_time {
+        seconds: 15
+      }
+      word: "the"
+    }
+    words {
+      start_time {
+        seconds: 15
+      }
+      end_time {
+        seconds: 15
+        nanos: 300000000
+      }
+      word: "rule"
+    }
+  }
+  language_code: "en-us"
+}
+results {
+  alternatives {
+    transcript: " well there you go I don\'t remember the rest but I remember is that a regarding kind of looks like Frankie Muniz he\'s got a big enough head for it he hates being like he hates I believe it yeah I mean basically it\'s basically labeled your entire career he he actually had met me on read and you just cussed out people who I think some video to sell their like somebody to talk about like a bunch of one hit wonders and most of the time anybody that is a one-hit wonder hates the song that made him famous I got to fucking like this mess was like"
+    confidence: 0.94860381
+    words {
+      start_time {
+        nanos: 300000000
+      }
+      end_time {
+        seconds: 1
+      }
+      word: "Bruno\'s"
+      speaker_tag: 2
+    }
+    words {
+      start_time {
+        seconds: 1
+      }
+      end_time {
+        seconds: 1
+        nanos: 400000000
+      }
+      word: "Granger"
+      speaker_tag: 2
+    }
+    words {
+      start_time {
+        seconds: 1
+        nanos: 400000000
+      }
+      end_time {
+        seconds: 14
+        nanos: 300000000
+      }
+      word: "did"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 14
+        nanos: 300000000
+      }
+      end_time {
+        seconds: 14
+        nanos: 600000000
+      }
+      word: "you"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 14
+        nanos: 600000000
+      }
+      end_time {
+        seconds: 14
+        nanos: 800000000
+      }
+      word: "know"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 14
+        nanos: 800000000
+      }
+      end_time {
+        seconds: 15
+      }
+      word: "the"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 15
+      }
+      end_time {
+        seconds: 15
+        nanos: 300000000
+      }
+      word: "rule"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 17
+        nanos: 500000000
+      }
+      end_time {
+        seconds: 17
+        nanos: 900000000
+      }
+      word: "well"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 17
+        nanos: 900000000
+      }
+      end_time {
+        seconds: 18
+        nanos: 100000000
+      }
+      word: "there"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 18
+        nanos: 100000000
+      }
+      end_time {
+        seconds: 18
+        nanos: 200000000
+      }
+      word: "you"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 18
+        nanos: 200000000
+      }
+      end_time {
+        seconds: 18
+        nanos: 400000000
+      }
+      word: "go"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 18
+        nanos: 400000000
+      }
+      end_time {
+        seconds: 18
+        nanos: 600000000
+      }
+      word: "I"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 18
+        nanos: 600000000
+      }
+      end_time {
+        seconds: 18
+        nanos: 800000000
+      }
+      word: "don\'t"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 18
+        nanos: 800000000
+      }
+      end_time {
+        seconds: 19
+      }
+      word: "remember"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 19
+      }
+      end_time {
+        seconds: 19
+        nanos: 200000000
+      }
+      word: "the"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 19
+        nanos: 200000000
+      }
+      end_time {
+        seconds: 19
+        nanos: 200000000
+      }
+      word: "rest"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 19
+        nanos: 200000000
+      }
+      end_time {
+        seconds: 19
+        nanos: 900000000
+      }
+      word: "but"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 19
+        nanos: 900000000
+      }
+      end_time {
+        seconds: 20
+      }
+      word: "I"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 20
+      }
+      end_time {
+        seconds: 20
+        nanos: 400000000
+      }
+      word: "remember"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 20
+        nanos: 400000000
+      }
+      end_time {
+        seconds: 20
+        nanos: 600000000
+      }
+      word: "is"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 20
+        nanos: 600000000
+      }
+      end_time {
+        seconds: 20
+        nanos: 700000000
+      }
+      word: "that"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 20
+        nanos: 700000000
+      }
+      end_time {
+        seconds: 20
+        nanos: 900000000
+      }
+      word: "a"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 20
+        nanos: 900000000
+      }
+      end_time {
+        seconds: 21
+        nanos: 500000000
+      }
+      word: "regarding"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 21
+        nanos: 500000000
+      }
+      end_time {
+        seconds: 22
+      }
+      word: "kind"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 22
+      }
+      end_time {
+        seconds: 22
+      }
+      word: "of"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 22
+      }
+      end_time {
+        seconds: 22
+        nanos: 300000000
+      }
+      word: "looks"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 22
+        nanos: 300000000
+      }
+      end_time {
+        seconds: 22
+        nanos: 400000000
+      }
+      word: "like"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 22
+        nanos: 400000000
+      }
+      end_time {
+        seconds: 23
+      }
+      word: "Frankie"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 23
+      }
+      end_time {
+        seconds: 23
+        nanos: 300000000
+      }
+      word: "Muniz"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 23
+        nanos: 300000000
+      }
+      end_time {
+        seconds: 24
+      }
+      word: "he\'s"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 24
+      }
+      end_time {
+        seconds: 24
+        nanos: 100000000
+      }
+      word: "got"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 24
+        nanos: 100000000
+      }
+      end_time {
+        seconds: 24
+        nanos: 200000000
+      }
+      word: "a"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 24
+        nanos: 200000000
+      }
+      end_time {
+        seconds: 24
+        nanos: 300000000
+      }
+      word: "big"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 24
+        nanos: 300000000
+      }
+      end_time {
+        seconds: 24
+        nanos: 400000000
+      }
+      word: "enough"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 24
+        nanos: 400000000
+      }
+      end_time {
+        seconds: 24
+        nanos: 700000000
+      }
+      word: "head"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 24
+        nanos: 700000000
+      }
+      end_time {
+        seconds: 25
+      }
+      word: "for"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 25
+      }
+      end_time {
+        seconds: 25
+        nanos: 100000000
+      }
+      word: "it"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 25
+        nanos: 100000000
+      }
+      end_time {
+        seconds: 25
+        nanos: 500000000
+      }
+      word: "he"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 25
+        nanos: 500000000
+      }
+      end_time {
+        seconds: 26
+        nanos: 600000000
+      }
+      word: "hates"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 26
+        nanos: 600000000
+      }
+      end_time {
+        seconds: 26
+        nanos: 800000000
+      }
+      word: "being"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 26
+        nanos: 800000000
+      }
+      end_time {
+        seconds: 27
+        nanos: 400000000
+      }
+      word: "like"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 27
+        nanos: 400000000
+      }
+      end_time {
+        seconds: 27
+        nanos: 700000000
+      }
+      word: "he"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 27
+        nanos: 700000000
+      }
+      end_time {
+        seconds: 28
+        nanos: 300000000
+      }
+      word: "hates"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 28
+        nanos: 300000000
+      }
+      end_time {
+        seconds: 29
+        nanos: 500000000
+      }
+      word: "I"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 29
+        nanos: 500000000
+      }
+      end_time {
+        seconds: 29
+        nanos: 900000000
+      }
+      word: "believe"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 29
+        nanos: 900000000
+      }
+      end_time {
+        seconds: 30
+        nanos: 100000000
+      }
+      word: "it"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 30
+        nanos: 100000000
+      }
+      end_time {
+        seconds: 30
+        nanos: 600000000
+      }
+      word: "yeah"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 30
+        nanos: 600000000
+      }
+      end_time {
+        seconds: 30
+        nanos: 700000000
+      }
+      word: "I"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 30
+        nanos: 700000000
+      }
+      end_time {
+        seconds: 30
+        nanos: 900000000
+      }
+      word: "mean"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 30
+        nanos: 900000000
+      }
+      end_time {
+        seconds: 31
+        nanos: 500000000
+      }
+      word: "basically"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 31
+        nanos: 500000000
+      }
+      end_time {
+        seconds: 32
+        nanos: 300000000
+      }
+      word: "it\'s"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 32
+        nanos: 300000000
+      }
+      end_time {
+        seconds: 32
+        nanos: 600000000
+      }
+      word: "basically"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 32
+        nanos: 600000000
+      }
+      end_time {
+        seconds: 33
+        nanos: 100000000
+      }
+      word: "labeled"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 33
+        nanos: 100000000
+      }
+      end_time {
+        seconds: 33
+        nanos: 200000000
+      }
+      word: "your"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 33
+        nanos: 200000000
+      }
+      end_time {
+        seconds: 33
+        nanos: 400000000
+      }
+      word: "entire"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 33
+        nanos: 400000000
+      }
+      end_time {
+        seconds: 33
+        nanos: 600000000
+      }
+      word: "career"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 33
+        nanos: 600000000
+      }
+      end_time {
+        seconds: 34
+        nanos: 400000000
+      }
+      word: "he"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 34
+        nanos: 400000000
+      }
+      end_time {
+        seconds: 34
+        nanos: 500000000
+      }
+      word: "he"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 34
+        nanos: 500000000
+      }
+      end_time {
+        seconds: 34
+        nanos: 800000000
+      }
+      word: "actually"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 34
+        nanos: 800000000
+      }
+      end_time {
+        seconds: 35
+        nanos: 100000000
+      }
+      word: "had"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 35
+        nanos: 100000000
+      }
+      end_time {
+        seconds: 35
+        nanos: 200000000
+      }
+      word: "met"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 35
+        nanos: 200000000
+      }
+      end_time {
+        seconds: 35
+        nanos: 500000000
+      }
+      word: "me"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 35
+        nanos: 500000000
+      }
+      end_time {
+        seconds: 35
+        nanos: 600000000
+      }
+      word: "on"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 35
+        nanos: 600000000
+      }
+      end_time {
+        seconds: 35
+        nanos: 800000000
+      }
+      word: "read"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 35
+        nanos: 800000000
+      }
+      end_time {
+        seconds: 36
+      }
+      word: "and"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 36
+      }
+      end_time {
+        seconds: 36
+        nanos: 100000000
+      }
+      word: "you"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 36
+        nanos: 100000000
+      }
+      end_time {
+        seconds: 36
+        nanos: 300000000
+      }
+      word: "just"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 36
+        nanos: 300000000
+      }
+      end_time {
+        seconds: 36
+        nanos: 900000000
+      }
+      word: "cussed"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 36
+        nanos: 900000000
+      }
+      end_time {
+        seconds: 37
+      }
+      word: "out"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 37
+      }
+      end_time {
+        seconds: 37
+        nanos: 300000000
+      }
+      word: "people"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 37
+        nanos: 300000000
+      }
+      end_time {
+        seconds: 37
+        nanos: 500000000
+      }
+      word: "who"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 37
+        nanos: 500000000
+      }
+      end_time {
+        seconds: 42
+        nanos: 100000000
+      }
+      word: "I"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 42
+        nanos: 100000000
+      }
+      end_time {
+        seconds: 42
+        nanos: 300000000
+      }
+      word: "think"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 42
+        nanos: 300000000
+      }
+      end_time {
+        seconds: 42
+        nanos: 400000000
+      }
+      word: "some"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 42
+        nanos: 400000000
+      }
+      end_time {
+        seconds: 42
+        nanos: 700000000
+      }
+      word: "video"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 42
+        nanos: 700000000
+      }
+      end_time {
+        seconds: 42
+        nanos: 800000000
+      }
+      word: "to"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 42
+        nanos: 800000000
+      }
+      end_time {
+        seconds: 43
+      }
+      word: "sell"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 43
+      }
+      end_time {
+        seconds: 43
+        nanos: 100000000
+      }
+      word: "their"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 43
+        nanos: 100000000
+      }
+      end_time {
+        seconds: 43
+        nanos: 300000000
+      }
+      word: "like"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 43
+        nanos: 300000000
+      }
+      end_time {
+        seconds: 43
+        nanos: 600000000
+      }
+      word: "somebody"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 43
+        nanos: 600000000
+      }
+      end_time {
+        seconds: 43
+        nanos: 700000000
+      }
+      word: "to"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 43
+        nanos: 700000000
+      }
+      end_time {
+        seconds: 43
+        nanos: 900000000
+      }
+      word: "talk"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 43
+        nanos: 900000000
+      }
+      end_time {
+        seconds: 44
+        nanos: 100000000
+      }
+      word: "about"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 44
+        nanos: 100000000
+      }
+      end_time {
+        seconds: 44
+        nanos: 200000000
+      }
+      word: "like"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 44
+        nanos: 200000000
+      }
+      end_time {
+        seconds: 44
+        nanos: 300000000
+      }
+      word: "a"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 44
+        nanos: 300000000
+      }
+      end_time {
+        seconds: 44
+        nanos: 500000000
+      }
+      word: "bunch"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 44
+        nanos: 500000000
+      }
+      end_time {
+        seconds: 44
+        nanos: 600000000
+      }
+      word: "of"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 44
+        nanos: 600000000
+      }
+      end_time {
+        seconds: 44
+        nanos: 800000000
+      }
+      word: "one"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 44
+        nanos: 800000000
+      }
+      end_time {
+        seconds: 44
+        nanos: 900000000
+      }
+      word: "hit"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 44
+        nanos: 900000000
+      }
+      end_time {
+        seconds: 45
+        nanos: 300000000
+      }
+      word: "wonders"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 45
+        nanos: 300000000
+      }
+      end_time {
+        seconds: 45
+        nanos: 500000000
+      }
+      word: "and"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 45
+        nanos: 500000000
+      }
+      end_time {
+        seconds: 45
+        nanos: 800000000
+      }
+      word: "most"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 45
+        nanos: 800000000
+      }
+      end_time {
+        seconds: 45
+        nanos: 900000000
+      }
+      word: "of"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 45
+        nanos: 900000000
+      }
+      end_time {
+        seconds: 46
+      }
+      word: "the"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 46
+      }
+      end_time {
+        seconds: 46
+        nanos: 100000000
+      }
+      word: "time"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 46
+        nanos: 100000000
+      }
+      end_time {
+        seconds: 46
+        nanos: 900000000
+      }
+      word: "anybody"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 46
+        nanos: 900000000
+      }
+      end_time {
+        seconds: 47
+        nanos: 200000000
+      }
+      word: "that"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 47
+        nanos: 200000000
+      }
+      end_time {
+        seconds: 47
+        nanos: 400000000
+      }
+      word: "is"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 47
+        nanos: 400000000
+      }
+      end_time {
+        seconds: 47
+        nanos: 500000000
+      }
+      word: "a"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 47
+        nanos: 500000000
+      }
+      end_time {
+        seconds: 47
+        nanos: 800000000
+      }
+      word: "one-hit"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 47
+        nanos: 800000000
+      }
+      end_time {
+        seconds: 47
+        nanos: 800000000
+      }
+      word: "wonder"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 47
+        nanos: 800000000
+      }
+      end_time {
+        seconds: 48
+        nanos: 400000000
+      }
+      word: "hates"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 48
+        nanos: 400000000
+      }
+      end_time {
+        seconds: 48
+        nanos: 500000000
+      }
+      word: "the"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 48
+        nanos: 500000000
+      }
+      end_time {
+        seconds: 48
+        nanos: 700000000
+      }
+      word: "song"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 48
+        nanos: 700000000
+      }
+      end_time {
+        seconds: 48
+        nanos: 900000000
+      }
+      word: "that"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 48
+        nanos: 900000000
+      }
+      end_time {
+        seconds: 49
+        nanos: 100000000
+      }
+      word: "made"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 49
+        nanos: 100000000
+      }
+      end_time {
+        seconds: 49
+        nanos: 200000000
+      }
+      word: "him"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 49
+        nanos: 200000000
+      }
+      end_time {
+        seconds: 49
+        nanos: 300000000
+      }
+      word: "famous"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 49
+        nanos: 300000000
+      }
+      end_time {
+        seconds: 49
+        nanos: 700000000
+      }
+      word: "I"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 49
+        nanos: 700000000
+      }
+      end_time {
+        seconds: 49
+        nanos: 800000000
+      }
+      word: "got"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 49
+        nanos: 800000000
+      }
+      end_time {
+        seconds: 49
+        nanos: 900000000
+      }
+      word: "to"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 49
+        nanos: 900000000
+      }
+      end_time {
+        seconds: 50
+        nanos: 100000000
+      }
+      word: "fucking"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 50
+        nanos: 100000000
+      }
+      end_time {
+        seconds: 50
+        nanos: 500000000
+      }
+      word: "like"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 50
+        nanos: 500000000
+      }
+      end_time {
+        seconds: 50
+        nanos: 700000000
+      }
+      word: "this"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 50
+        nanos: 700000000
+      }
+      end_time {
+        seconds: 50
+        nanos: 900000000
+      }
+      word: "mess"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 50
+        nanos: 900000000
+      }
+      end_time {
+        seconds: 51
+        nanos: 100000000
+      }
+      word: "was"
+      speaker_tag: 1
+    }
+    words {
+      start_time {
+        seconds: 51
+        nanos: 100000000
+      }
+      end_time {
+        seconds: 51
+        nanos: 400000000
+      }
+      word: "like"
+      speaker_tag: 1
+    }
+  }
+  language_code: "en-us"
+}
+
+172.17.0.1 - - [24/Aug/2019 21:46:23] "POST /api/v1/analyze HTTP/1.1" 200 -
