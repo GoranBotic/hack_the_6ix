@@ -1,13 +1,15 @@
-<input type="file" (change)="onFileSelected($event)"/>
-<button mat-raised-button (click) = "onUploadFile()">Upload File</button>
+<div class = "home">
+    <input type="file" (change)="onFileSelected($event)"/>
+    <button mat-raised-button (click) = "onUploadFile()">Upload File</button>
 
-<mat-form-field class="example-full-width">
-    <input matInput placeholder="Enter Text Here">
-</mat-form-field>
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Enter Text Here">
+    </mat-form-field>
 
-<button mat-raised-button (click) = "onUploadText()">Upload Text</button>
-<app-audio-record></app-audio-record>
+    <button mat-raised-button (click) = "onUploadText()">Upload Text</button>
+    <app-audio-record></app-audio-record>
 
-<div *ngIf="msgLoaded | async"> 
-  {{ text }}
+    <div *ngIf="msgLoaded | async"> 
+    {{ text }}
+    </div>
 </div>
