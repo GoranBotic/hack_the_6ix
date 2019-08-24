@@ -1,52 +1,91 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component } from '@angular/core';
+import * as RecordRTC from 'recordrtc';
 import { DomSanitizer } from '@angular/platform-browser';
-import { Observable, fromEvent } from 'rxjs';
-import { take, tap, pluck } from 'rxjs/operators';
-
-declare var MediaRecorder: any;
+import { CustomerDataService } from '../customer-data-service';
 
 @Component({
   selector: 'app-audio-record',
   templateUrl: './audio-record.component.html',
   styleUrls: ['./audio-record.component.css']
 })
-export class AudioRecordComponent implements OnInit {
-  private audioRecorder;
-  private recordings: Observable<any>;
-  seconds: number;
-  audioURLs = [];
 
-  constructor(private sanitizer: DomSanitizer, private changeDetector: ChangeDetectorRef) {}
 
-  ngOnInit() {
-    navigator.mediaDevices.getUserMedia({ audio: true })
-      .then(stream => {
-        this.audioRecorder = new MediaRecorder(stream);
-        this.recordings = fromEvent(this.audioRecorder, 'dataavailable')
-      })
-      .catch(error => {
-        console.log('CANNOT RECORD: ', error);
-      }); 
-  }
+export class AudioRecordComponent {
 
-  onHold(time) {
-    this.seconds = Math.round(time / 1000);
-  }
+  selectedFile: File = null;
+  response: string = '';
+  text: string = '';
+  msgLoaded: Promise<boolean>;
 
-  onStart() {
-    this.audioRecorder.start();
-    this.recordings.pipe(
-      take(1),
-      pluck('data'),
-      tap((data: BlobPart) => {
-        let blob = new Blob([data], { type: 'audio/x-mpeg-3' });
-        this.audioURLs.push(this.sanitizer.bypassSecurityTrustUrl(URL.createObjectURL(blob)));
-        this.changeDetector.detectChanges();
-      })
-    ).subscribe();
-  }
+   //Lets initiate Record OBJ
+    private record;
+    //Will use this flag for detect recording
+    private recording = false;
+    //Url of Blob
+    private url;
+    private error;
+    constructor(private domSanitizer: DomSanitizer, private customerService: CustomerDataService) {
+    }
+    sanitize(url:string){
+        return this.domSanitizer.bypassSecurityTrustUrl(url);
+    }
+    /**
+     * Start recording.
+     */
+    initiateRecording() {
+        
+        this.recording = true;
+        let mediaConstraints = {
+            video: false,
+            audio: true
+        };
+        navigator.mediaDevices
+            .getUserMedia(mediaConstraints)
+            .then(this.successCallback.bind(this), this.errorCallback.bind(this));
+    }
+    /**
+     * Will be called automatically.
+     */
+    successCallback(stream) {
+        var options = {
+            mimeType: "audio/wav",
+            numberOfAudioChannels: 1
+        };
+        //Start Actual Recording
+        var StereoAudioRecorder = RecordRTC.StereoAudioRecorder;
+        this.record = new StereoAudioRecorder(stream, options);
+        this.record.record();
+    }
+    /**
+     * Stop recording.
+     */
+    stopRecording() {
+        this.recording = false;
+        this.record.stop(this.processRecording.bind(this));
+    }
+    /**
+     * processRecording Do what ever you want with blob
+     * @param  {any} blob Blog
+     */
+    processRecording(blob) {
+      this.url = URL.createObjectURL(blob);
+  
+    }
+   
+    /**
+     * Process Error.
+     */
+    errorCallback(error) {
+        this.error = 'Can not play audio in your browser';
+    }
 
-  onStop() {
-    this.audioRecorder.stop();
+    public blobToFile = (theBlob: Blob, fileName:string): File => {
+      var b: any = theBlob;
+      //A Blob() is almost a File() - it's just missing the two properties below which we will add
+      b.lastModifiedDate = new Date();
+      b.name = fileName;
+  
+      //Cast to a File() type
+      return <File>theBlob;
   }
 }

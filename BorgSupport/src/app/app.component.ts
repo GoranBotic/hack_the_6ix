@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CustomerDataService } from './customer-data-service';
-import { MessagesComponent } from './messages/messages.component';
+import { AudioRecordComponent } from './audio-record/audio-record.component';
 
 @Component({
   selector: 'app-root',
@@ -12,8 +12,11 @@ export class AppComponent {
   selectedFile: File = null;
   response: string = '';
   text: string = '';
-
   msgLoaded: Promise<boolean>;
+
+  audioRecord: AudioRecordComponent;
+
+
 
   constructor(private customerService: CustomerDataService){}
 
@@ -24,7 +27,8 @@ export class AppComponent {
     const fd = new FormData();
     fd.append('audio',this.selectedFile);
     this.customerService.postMessage(fd).subscribe(res => {
-      this.response = res["sentiment"];
+      console.log(res);
+      this.response = res["sentinment"];
       this.text = this.response["text"];
       this.msgLoaded = Promise.resolve(true);
     });

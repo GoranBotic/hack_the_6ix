@@ -1,7 +1,6 @@
-<div>
-    <button mat-raised-button 
-    *ngIf="!audioURL"
-    (holdTime)="onHold($event)"
-    (start)="onStart()"
-    (stop)="onStop()">Mic Test</button>
-</div>
+<a (click)="initiateRecording()" *ngIf="!recording"> Start Recording </a>
+    <a (click)="stopRecording()"  *ngIf="recording"> Stop Recording </a>
+    <div></div>
+    <audio controls="" *ngIf="url">
+        <source [src]="sanitize(url)" type="audio/wav">
+    </audio>
