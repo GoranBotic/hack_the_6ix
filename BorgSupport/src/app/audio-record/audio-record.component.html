@@ -1,0 +1,7 @@
+<div>
+    <button mat-raised-button 
+    *ngIf="!audioURL"
+    (holdTime)="onHold($event)"
+    (start)="onStart()"
+    (stop)="onStop()">Mic Test</button>
+</div>
