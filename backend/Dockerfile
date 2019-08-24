@@ -2,11 +2,10 @@ FROM centos:centos7
 
 WORKDIR /code
 
-ADD ./requirements.txt /code
-
 RUN \
 yum install epel-release -y &&\
 yum clean all && yum update -y
+
 
 RUN \
 yum install portaudio-devel python34-pip mlocate bash-completion git wget sox libtool autoconf bison swig python34-devel python34-numpy python34-scipy python-devel doxygen alsa-lib-devel pulseaudio-libs-devel make -y
@@ -16,6 +15,8 @@ RUN easy_install-3.4 pip
 
 RUN \
 pip3 install --upgrade pip
+
+ADD ./requirements.txt /code
 
 RUN pip3 install -r requirements.txt
 

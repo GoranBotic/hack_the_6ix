@@ -12,12 +12,30 @@ import sys
 
 from flask_cors import CORS
 
+from google.cloud import speech_v1 as speech
+client = speech.SpeechClient()
+
 app = Flask(__name__)
 CORS(app)
 
 #TODO: transcript 
 #TODO: highlight keywords in transcript
 #return sentiment for the chunk as well as the overall analysis object 
+
+def getSpeakers(content):
+    audio = speech.types.RecognitionAudio(content=content)
+
+    config = speech.types.RecognitionConfig(
+    encoding=speech.enums.RecognitionConfig.AudioEncoding.LINEAR16,
+    sample_rate_hertz=8000,
+    language_code='en-US',
+    enable_speaker_diarization=True,
+    diarization_speaker_count=2)
+
+    print('Waiting for operation to complete...', file=sys.stderr)
+    response = client.recognize(config, audio)
+
+    print(result, file=sys.stderr)
 
 def getSentiment(text): 
     blob = TextBlob(str(unicodedata.normalize('NFKD', text).encode('ascii','ignore').lower()))
@@ -28,6 +46,9 @@ def STT(audio):
     
     text = ""
     with sr.AudioFile(audio.stream) as fl:
+
+        getSpeakers(fl) 
+
         aud = r.record(fl)
 
     
