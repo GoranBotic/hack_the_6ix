@@ -13,6 +13,7 @@ export class AppComponent {
   selectedFile: File = null;
   response: string = '';
   text: string = '';
+  todoText = [];
   msgLoaded: Promise<boolean>;
 
   audioRecord: AudioRecordComponent;
@@ -34,12 +35,15 @@ export class AppComponent {
       this.response = res["sentiment"];
       this.text = this.response["text"];
       this.msgLoaded = Promise.resolve(true);
-      console.log(this.text);
+      
     });
     
     //console.log(this.text);
   } 
 
+  generatePhrases(){
+    this.todoText.push('Welcome to Borg Support, How can i help you?');
+  }
  
   onFileSelected(event){
     this.selectedFile = <File>event.target.files[0];
