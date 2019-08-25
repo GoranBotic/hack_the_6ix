@@ -13,6 +13,7 @@
 }
 
 .info{
+
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -33,6 +34,9 @@
     justify-content: flex-end;
 }
 
+#box2{
+    margin-left: 20px;
+}
 .threeDot{
     position: absolute;
     width: 50px;
