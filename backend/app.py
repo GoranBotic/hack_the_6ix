@@ -12,6 +12,10 @@ import sys
 
 from flask_cors import CORS
 
+from io import BytesIO
+
+import base64
+
 app = Flask(__name__)
 CORS(app)
 
@@ -46,8 +50,13 @@ def STT(audio):
 @app.route("/api/v1/analyze", methods=['POST','PUT'])
 def analyze():
     text = ""
-    if 'audio' in request.files:
-        text = STT(request.files['audio'])
+    print("//////",file=sys.stderr)
+    print(request,file=sys.stderr)
+    print(request.form,file=sys.stderr)
+    print(request.files,file=sys.stderr)
+    if 'audio' in request.form:
+        print(bytes(base64.b64encode(request.form['audio'])),file=sys.stderr)
+        text = STT(BytesIO(bytes(request.form['audio'])))
     elif 'text' in request.form:
         text = request.form['text']
     else:
