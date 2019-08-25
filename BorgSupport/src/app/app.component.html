@@ -12,26 +12,29 @@
     
         
     <div class = "info">
-        <div>
-            <label style="font-weight: bold; font-size: 20px;">Transcript</label>
-            <div>
-                <textarea readonly disabled cols=80 rows = 30></textarea>
+            <div style="padding-right: 150px;">
+                    <label style="font-weight: bold;font-size: 20px;">Transcript</label>
+                        <ul>
+                                <li *ngFor="let text of texts">
+                                    <span *ngIf="sentiment > 0.5" class = "happy">{{text}}</span> 
+                                    <span *ngIf="sentiment <= 0.5" class = "sad">{{text}}</span> 
+                                </li>
+                        </ul>
             </div>
-        </div>
-        <div>
-            <label style="font-weight: bold;font-size: 20px;">Talking Points</label>
-            <ul class="heroes" style="padding-right: 150px;">
+
+        <div style="padding-right: 150px;">
+        <label style="font-weight: bold;font-size: 20px;">Talking Points</label>
+            <ul class="heroes">
                     <li *ngFor="let todos of todoText">
                         <span class="badge">{{todos}}</span> 
                     </li>
             </ul>
-           
+        </div>
         
+</div>
 
-    </div>
-    <div class ="bottom-button">
-        <app-audio-record></app-audio-record>
-    </div>
+<div class ="bottom-button">
+    <app-audio-record></app-audio-record>
 </div>
 
 

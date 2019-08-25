@@ -12,9 +12,10 @@ export class AppComponent {
 
   selectedFile: File = null;
   response: string = '';
-  text = [];
+  texts = [];
   todoText = [];
   msgLoaded: Promise<boolean>;
+  sentiment : number;
 
   audioRecord: AudioRecordComponent;
   
@@ -33,9 +34,9 @@ export class AppComponent {
     this.customerService.postMessage(fd).subscribe(res => {
       console.log(res);
       this.response = res["sentiment"];
-      this.text.push(this.response["text"]);
+      this.texts.push(this.response["text"]);
       this.msgLoaded = Promise.resolve(true);
-
+      this.sentiment = this.response["polarity"];
       
     });
     
@@ -45,6 +46,7 @@ export class AppComponent {
   generatePhrases(){
     this.todoText.push('Welcome to Borg Support, How can i help you?');
     this.todoText.push('Would you be interested in our new deals?');
+
   }
  
   onFileSelected(event){
