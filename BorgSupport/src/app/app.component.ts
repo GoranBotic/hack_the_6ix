@@ -52,6 +52,9 @@ export class AppComponent {
     //console.log(this.text);
   } 
 
+  generatePhrases(){
+    this.todoText.push('Welcome to Borg Support, How can i help you?');
+  }
  
   onFileSelected(event){
     this.selectedFile = <File>event.target.files[0];

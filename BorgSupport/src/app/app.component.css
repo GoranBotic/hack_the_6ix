@@ -29,9 +29,9 @@
 }
 
 .sidenav{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    position: absolute;
+    left: 88%;
+    top: 20%;
 }
 
 #box2{
