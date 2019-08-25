@@ -13,17 +13,20 @@
         
     <div class = "info">
         <div>
-            <label>Label</label>
+            <label style="font-weight: bold; font-size: 20px;">Conversation</label>
             <div>
-                <textarea cols=80 rows = 30></textarea>
+                <textarea readonly disabled cols=80 rows = 30></textarea>
             </div>
         </div>
         <div>
-            <label>Label2</label>
-            <div>
-                <textarea cols=30 rows = 30></textarea>
-            </div>
+            <label style="font-weight: bold;font-size: 20px;">Quotas</label>
+            <ul class="heroes" style="padding-right: 150px;">
+                    <li *ngFor="let todos of todoText">
+                        <span class="badge">{{todos}}</span> 
+                    </li>
+            </ul>
         </div>
+        
 
     </div>
     <div class ="bottom-button">

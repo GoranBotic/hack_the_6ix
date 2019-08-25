@@ -22,7 +22,7 @@ export class AppComponent {
   constructor(private customerService: CustomerDataService) {
   }
   ngOnInit(){
-
+    this.generatePhrases();
   }
   /*
     Simple upload file function on button click
@@ -43,6 +43,7 @@ export class AppComponent {
 
   generatePhrases(){
     this.todoText.push('Welcome to Borg Support, How can i help you?');
+    this.todoText.push('Would you be interested in our new deals?');
   }
  
   onFileSelected(event){
