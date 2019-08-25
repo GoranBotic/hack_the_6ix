@@ -46,6 +46,10 @@ export class AppComponent {
   generatePhrases(){
     this.todoText.push('Welcome to Borg Support, How can i help you?');
     this.todoText.push('Would you be interested in our new deals?');
+    this.todoText.push('How is you day today?');
+    this.todoText.push('Technical Service Line (123)-345-6789');
+    this.todoText.push('Regular rates are 2 dollars');
+    this.todoText.push('Premium rates are 3.5 dollars');
 
   }
  
