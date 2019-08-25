@@ -1,0 +1,6 @@
+<button mat-raised-button (click)="initiateRecording()" *ngIf="!recording"> Start Recording</button>
+<button mat-raised-button (click)="stopRecording()"  *ngIf="recording"> Stop Recording </button>
+    
+    <audio controls="" *ngIf="url">
+        <source [src]="sanitize(url)" type="audio/wav">
+    </audio>

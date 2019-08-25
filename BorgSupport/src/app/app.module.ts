@@ -10,25 +10,18 @@ import { MessagesComponent } from './messages/messages.component';
 import { CustomerDataService } from './customer-data-service';
 import { AudioRecordComponent } from './audio-record/audio-record.component';
 
-import { HomeComponent } from './home/home.component';
-import { IntroComponent } from './intro/intro.component';
-
 @NgModule({
   declarations: [
     AppComponent,
     MessagesComponent,
     AudioRecordComponent,
-    IntroComponent
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    HttpClientModule,
-    RouterModule.forRoot([
-      {path: '', component: HomeComponent},
-      {path: 'intro',component: AudioRecordComponent}
-    ])
+    HttpClientModule
     
   ],
   providers: [CustomerDataService],

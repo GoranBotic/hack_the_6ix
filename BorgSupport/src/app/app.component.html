@@ -1,2 +1,20 @@
+<div class = "home">
+        <input type="file" (change)="onFileSelected($event)"/>
+        <button mat-raised-button (click) = "onUploadFile()">Upload File</button>
+    
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Enter Text Here">
+        </mat-form-field>
+    
+        <button mat-raised-button (click) = "onUploadText()">Upload Text</button>
+        <app-audio-record></app-audio-record>
+        
 
-<router-outlet></router-outlet>
+    
+        <img src = "../assets/3dot.jpg" class="threeDot">
+        <label>Welcome To BorgSupport</label>
+        
+    </div>
+
+  
+    
