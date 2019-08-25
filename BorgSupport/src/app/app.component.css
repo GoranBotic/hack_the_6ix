@@ -12,6 +12,26 @@
 
 }
 
+.info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 5%;
+}
+
+.bottom-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-size:80px;
+    
+}
+
+.sidenav{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
 
 .threeDot{
     position: absolute;

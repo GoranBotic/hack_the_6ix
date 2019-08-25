@@ -31,7 +31,7 @@ export class AppComponent {
     fd.append('audio',this.selectedFile);
     this.customerService.postMessage(fd).subscribe(res => {
       console.log(res);
-      this.response = res["sentinment"];
+      this.response = res["sentiment"];
       this.text = this.response["text"];
       this.msgLoaded = Promise.resolve(true);
     });

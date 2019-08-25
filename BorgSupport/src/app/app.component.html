@@ -1,20 +1,35 @@
-<div class = "home">
-        <input type="file" (change)="onFileSelected($event)"/>
-        <button mat-raised-button (click) = "onUploadFile()">Upload File</button>
-    
-        <mat-form-field class="example-full-width">
-            <input matInput placeholder="Enter Text Here">
-        </mat-form-field>
-    
-        <button mat-raised-button (click) = "onUploadText()">Upload Text</button>
-        <app-audio-record></app-audio-record>
-        
 
+<div class = "home">
     
-        <img src = "../assets/3dot.jpg" class="threeDot">
         <label>Welcome To BorgSupport</label>
         
+    
+        
+    <div class = sidenav>
+        <input type="file" (change)="onFileSelected($event)"/>
+        <button mat-raised-button (click) = "onUploadFile()">Upload File</button>
+    </div>        
+    
+        
+    <div class = "info">
+        <div>
+            <label>Label</label>
+            <div>
+                <textarea cols=80 rows = 30>Something</textarea>
+            </div>
+        </div>
+        <div>
+            <label>Label2</label>
+            <div>
+                <textarea cols=30 rows = 30>Something2</textarea>
+            </div>
+        </div>
     </div>
+    <div class ="bottom-button">
+        <app-audio-record></app-audio-record>
+    </div>
+</div>
+
 
   
     
