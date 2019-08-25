@@ -16,6 +16,7 @@ export class AudioRecordComponent {
   response: string = '';
   text: string = '';
   msgLoaded: Promise<boolean>;
+  toggle = true;
 
    //Lets initiate Record OBJ
     private record;
@@ -33,7 +34,7 @@ export class AudioRecordComponent {
      * Start recording.
      */
     initiateRecording() {
-        
+        this.toggle = false;
         this.recording = true;
         let mediaConstraints = {
             video: false,
@@ -60,6 +61,7 @@ export class AudioRecordComponent {
      * Stop recording.
      */
     stopRecording() {
+        this.toggle = true;
         this.recording = false;
         this.record.stop(this.processRecording.bind(this));
     }
