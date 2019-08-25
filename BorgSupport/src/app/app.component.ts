@@ -12,7 +12,7 @@ export class AppComponent {
 
   selectedFile: File = null;
   response: string = '';
-  text: string = '';
+  text = [];
   todoText = [];
   msgLoaded: Promise<boolean>;
 
@@ -33,8 +33,9 @@ export class AppComponent {
     this.customerService.postMessage(fd).subscribe(res => {
       console.log(res);
       this.response = res["sentiment"];
-      this.text = this.response["text"];
+      this.text.push(this.response["text"]);
       this.msgLoaded = Promise.resolve(true);
+
       
     });
     

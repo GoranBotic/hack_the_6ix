@@ -1,5 +1,5 @@
 .home{
-    position: fixed; 
+    position: fixed;  
     top: 0; 
     left: 0; 
 
@@ -44,4 +44,12 @@
     left: 1367px;
     top: 38px;
 
+}
+
+.happy {
+    background-color: #aaffaa
+}
+
+.sad {
+    background-color: #ffaaaa
 }
