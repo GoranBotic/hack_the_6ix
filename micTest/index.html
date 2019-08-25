@@ -1,0 +1,191 @@
+<audio id="player" controls></audio>
+<script>
+    var count = 0 
+
+    var buff = -1
+    context =  -1 
+    const handleSuccess = function(stream) {
+      context = new AudioContext();
+      const source = context.createMediaStreamSource(stream);
+      const processor = context.createScriptProcessor(16384, 1, 1);
+  
+      source.connect(processor);
+      processor.connect(context.destination);
+  
+      processor.onaudioprocess = function(e) {
+        if(count == 5) {
+            count = 0
+            wav = bufferToWave(buff, buff.length)
+
+            console.log(wav)
+
+            // const form = document.createElement('form');
+            // form.method = "POST";
+            // form.action = "http://localhost:4500/api/v1/analyze";
+            // const input = document.createElement('input');
+            // input.type="hidden"
+            // input.name="audio" 
+            // input.value=URL.createObjectURL(wav) 
+            // input.type="file"
+            // form.appendChild(input)
+            // document.body.appendChild(form)
+            // form.submit();
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", 'http://35.222.73.50:4500/api/v1/analyze', true);
+
+            // // //Send the proper header information along with the request
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+            xhr.onreadystatechange = function() { // Call a function when the state changes.
+                if (this.readyState === XMLHttpRequest.DONE) {
+                    console.log(this)
+                }
+            }
+            // //formData = new FormData();
+            // // //formData.append('audio', 'words.wav')
+            // //formData.append('audio', wav);
+            // reader = new FileReader();
+            
+            // reader.onloadend = function() {
+            //     var base64data = reader.result;   
+            //     xhr.send("audio="+base64data);             
+            //     console.log(base64data);
+            // }
+            // reader.readAsDataURL(wav) 
+            xhr.send('audio='+arrayBufferToBase64(wav))
+            //xhr.send(wav)
+            // // xhr.send(new Int8Array()); 
+            // // xhr.send(document);
+
+        } else if (count == 0) {
+            buff = e.inputBuffer
+            count += 1
+        } else {
+            buff = appendBuffer(buff, e.inputBuffer)
+            count += 1
+        }
+        
+      };
+    };
+  
+    navigator.mediaDevices.getUserMedia({ audio: true, video: false })
+        .then(handleSuccess);
+
+    function appendBuffer(buffer1, buffer2) {
+        var numberOfChannels = Math.min( buffer1.numberOfChannels, buffer2.numberOfChannels );
+        var tmp = context.createBuffer( numberOfChannels, (buffer1.length + buffer2.length), buffer1.sampleRate );
+        for (var i=0; i<numberOfChannels; i++) {
+        var channel = tmp.getChannelData(i);
+        channel.set( buffer1.getChannelData(i), 0);
+        channel.set( buffer2.getChannelData(i), buffer1.length);
+        }
+        return tmp;
+    }
+
+    // Convert AudioBuffer to a Blob using WAVE representation
+    function bufferToWave(abuffer, len) {
+        var numOfChan = abuffer.numberOfChannels,
+        length = len * numOfChan * 2 + 44,
+        buffer = new ArrayBuffer(length),
+        view = new DataView(buffer),
+        channels = [], i, sample,
+        offset = 0,
+        pos = 0;
+
+        // write WAVE header
+        setUint32(0x46464952);                         // "RIFF"
+        setUint32(length - 8);                         // file length - 8
+        setUint32(0x45564157);                         // "WAVE"
+
+        setUint32(0x20746d66);                         // "fmt " chunk
+        setUint32(16);                                 // length = 16
+        setUint16(1);                                  // PCM (uncompressed)
+        setUint16(numOfChan);
+        setUint32(abuffer.sampleRate);
+        setUint32(abuffer.sampleRate * 2 * numOfChan); // avg. bytes/sec
+        setUint16(numOfChan * 2);                      // block-align
+        setUint16(16);                                 // 16-bit (hardcoded in this demo)
+
+        setUint32(0x61746164);                         // "data" - chunk
+        setUint32(length - pos - 4);                   // chunk length
+
+        // write interleaved data
+        for(i = 0; i < abuffer.numberOfChannels; i++)
+            channels.push(abuffer.getChannelData(i));
+
+        while(pos < length) {
+            for(i = 0; i < numOfChan; i++) {             // interleave channels
+                sample = Math.max(-1, Math.min(1, channels[i][offset])); // clamp
+                sample = (0.5 + sample < 0 ? sample * 32768 : sample * 32767)|0; // scale to 16-bit signed int
+                view.setInt16(pos, sample, true);          // write 16-bit sample
+                pos += 2;
+            }
+            offset++                                     // next source sample
+        }
+
+        // create Blob
+        //return new Blob([buffer], {type: "audio/wav"});
+        return buffer
+
+        function setUint16(data) {
+            view.setUint16(pos, data, true);
+            pos += 2;
+        }
+
+        function setUint32(data) {
+            view.setUint32(pos, data, true);
+            pos += 4;
+        }
+    }
+
+    function arrayBufferToBase64( buffer ) {
+
+        aBytes = new Uint8Array( buffer )
+
+        var eqLen = (3 - (aBytes.length % 3)) % 3, sB64Enc = "";
+
+  for (var nMod3, nLen = aBytes.length, nUint24 = 0, nIdx = 0; nIdx < nLen; nIdx++) {
+    nMod3 = nIdx % 3;
+    /* Uncomment the following line in order to split the output in lines 76-character long: */
+    /*
+    if (nIdx > 0 && (nIdx * 4 / 3) % 76 === 0) { sB64Enc += "\r\n"; }
+    */
+    nUint24 |= aBytes[nIdx] << (16 >>> nMod3 & 24);
+    if (nMod3 === 2 || aBytes.length - nIdx === 1) {
+      sB64Enc += String.fromCharCode(uint6ToB64(nUint24 >>> 18 & 63), uint6ToB64(nUint24 >>> 12 & 63), uint6ToB64(nUint24 >>> 6 & 63), uint6ToB64(nUint24 & 63));
+      nUint24 = 0;
+    }
+  }
+
+  return  eqLen === 0 ?
+      sB64Enc
+    :
+      sB64Enc.substring(0, sB64Enc.length - eqLen) + (eqLen === 1 ? "=" : "==");
+        
+        // var binary = '';
+        // var bytes = new Uint8Array( buffer );
+        // var len = bytes.byteLength;
+        // for (var i = 0; i < len; i++) {
+        //     binary += String.fromCharCode( bytes[ i ] );
+        // }
+        // return window.btoa( binary );
+    }
+
+    function uint6ToB64 (nUint6) {
+
+return nUint6 < 26 ?
+    nUint6 + 65
+  : nUint6 < 52 ?
+    nUint6 + 71
+  : nUint6 < 62 ?
+    nUint6 - 4
+  : nUint6 === 62 ?
+    43
+  : nUint6 === 63 ?
+    47
+  :
+    65;
+
+}
+</script>
