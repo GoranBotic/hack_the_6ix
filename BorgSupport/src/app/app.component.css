@@ -12,7 +12,17 @@
 
 }
 
+.info{
+    position: absolute;
+    display:inline-block;
+    
+    top: 15%;
+    left: 15%;
+}
 
+#box2{
+    margin-left: 20px;
+}
 .threeDot{
     position: absolute;
     width: 50px;
