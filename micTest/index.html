@@ -140,12 +140,14 @@
     }
 
     function arrayBufferToBase64( buffer ) {
-    var binary = '';
-    var bytes = new Uint8Array( buffer );
-    var len = bytes.byteLength;
-    for (var i = 0; i < len; i++) {
-        binary += String.fromCharCode( bytes[ i ] );
+        var base64String = btoa(String.fromCharCode.apply(null, new Uint8Array(arrayBuffer)));
+        return base64String 
+        var binary = '';
+        var bytes = new Uint8Array( buffer );
+        var len = bytes.byteLength;
+        for (var i = 0; i < len; i++) {
+            binary += String.fromCharCode( bytes[ i ] );
+        }
+        return window.btoa( binary );
     }
-    return window.btoa( binary );
-}
 </script>
