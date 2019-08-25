@@ -31,7 +31,7 @@ r = sr.Recognizer()
 def STT(audio):
     
     text = ""
-    with sr.AudioFile(audio.stream) as fl:
+    with sr.AudioFile(audio) as fl:
         aud = r.record(fl)
 
     
@@ -54,9 +54,12 @@ def analyze():
     print(request,file=sys.stderr)
     print(request.form,file=sys.stderr)
     print(request.files,file=sys.stderr)
+    
     if 'audio' in request.form:
-        print(bytes(base64.b64encode(request.form['audio'])),file=sys.stderr)
-        text = STT(BytesIO(bytes(request.form['audio'])))
+        print("saw audio", file=sys.stderr)
+        #print(bytes(base64.b64decode(request.form['audio'])),file=sys.stderr)
+        text = STT(BytesIO(bytes(base64.b64decode(request.form['audio']))))
+        pass
     elif 'text' in request.form:
         text = request.form['text']
     else:
