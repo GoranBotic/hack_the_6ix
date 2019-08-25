@@ -2,3 +2,10 @@ button{
     height: 90px;
     width: 130px;
 }
+
+.green{
+    background-color: green;
+}
+.red{
+    background-color: red;
+}
