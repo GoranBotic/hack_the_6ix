@@ -34,6 +34,7 @@ export class AppComponent {
       this.response = res["sentiment"];
       this.text = this.response["text"];
       this.msgLoaded = Promise.resolve(true);
+      console.log(this.text);
     });
     
     //console.log(this.text);
