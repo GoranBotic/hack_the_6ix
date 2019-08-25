@@ -1,0 +1,30 @@
+<div class = "home">
+        <input type="file" (change)="onFileSelected($event)"/>
+        <button mat-raised-button (click) = "onUploadFile()">Upload File</button>
+    
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Enter Text Here">
+        </mat-form-field>
+    
+        <button mat-raised-button (click) = "onUploadText()">Upload Text</button>
+      
+        <div *ngIf="!recording">
+            <button mat-raised-button  (click)="initiateRecording()" > Start Recording</button>
+        </div>
+        <button mat-raised-button *ngIf="recording" (click)="stopRecording()"  > Stop Recording </button>
+        
+        <!--<audio controls="" *ngIf="url">
+            <source [src]="sanitize(url)" type="audio/wav">
+        </audio>-->
+
+    
+        <!--<div *ngIf="msgLoaded | async"> 
+            {{ text }}
+        </div>-->
+        <img src = "../assets/3dot.jpg" class="threeDot">
+        <label>Welcome To BorgSupport</label>
+        
+    </div>
+
+  
+    

@@ -1,7 +1,8 @@
 import { RouterModule, Router } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common'; 
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { MatButtonModule} from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
@@ -26,7 +27,7 @@ import { IntroComponent } from './intro/intro.component';
     HttpClientModule,
     RouterModule.forRoot([
       {path: '', component: HomeComponent},
-      {path: 'intro',component: IntroComponent}
+      {path: 'intro',component: AudioRecordComponent}
     ])
     
   ],
